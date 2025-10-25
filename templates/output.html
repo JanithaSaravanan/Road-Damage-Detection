@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+    </style>
+</head>
+<body>
+    <h1>Processed Media</h1>
+    {% if is_video %}
+        <video width="640" controls>
+            <source src="{{ url_for('static', filename='outputs/' + filename) }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    {% else %}
+        <img src="{{ url_for('static', filename='outputs/' + filename) }}" alt="Processed Image" style="max-width: 100%;">
+    {% endif %}
+    <p><a href="{{ url_for('home') }}">Process another file</a></p>
+</body>
+</html>

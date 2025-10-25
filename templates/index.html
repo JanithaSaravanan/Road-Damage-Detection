@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pothole Detection</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        .container { width: 50%; margin: auto; }
+        input[type="text"] { width: 80%; padding: 10px; }
+        button { padding: 10px 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pothole Detection with YOLOv8 & MiDaS</h1>
+        <p>Enter the path to your image or video file:</p>
+        <form action="/process" method="post">
+            <input type="text" name="file_path" placeholder="e.g., test4.mp4">
+            <button type="submit">Process</button>
+        </form>
+    </div>
+</body>
+</html>
