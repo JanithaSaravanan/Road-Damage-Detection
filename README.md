@@ -1,8 +1,16 @@
-AI DRIVEN ROAD DAMAGE DETECTION
+**AI DRIVEN ROAD DAMAGE DETECTION**
 
-Road surface monitoring is a critical aspect of maintaining transportation safety and infrastructure quality. Traditional manual inspection methods are time-consuming, labor-intensive, and prone to human error. To address these challenges, this project proposes a real-time AI-based system for detecting and analyzing road anomalies such as potholes, cracks, manholes, and speed bumps using computer vision and deep learning techniques.
-The proposed method integrates YOLOv8, a state-of-the-art object detection model, with MiDaS, a monocular depth estimation model, to identify and evaluate road defects from live video streams or image inputs. YOLOv8 accurately localizes anomalies, while MiDaS generates a relative depth map to estimate the distance and depth of each detected object. A severity score is then computed using a hybrid formula combining relative area and inverse normalized depth, classifying anomalies into Safe (Low), Warning (Medium), and Danger (High) categories.
-The system provides real-time visualization with color-coded bounding boxes and distance measurements (in cm), enhancing interpretability for users and authorities. Experimental results demonstrate that the proposed approach effectively detects multiple road anomalies under varying lighting and surface conditions with minimal latency, contributing to safer and more efficient road maintenance.
+Road surface monitoring is a critical aspect of maintaining transportation safety and infrastructure quality. Traditional manual inspection methods are time-consuming, labor-intensive, and prone to human error.
+
+To address these challenges, this project proposes a real-time AI-based system for detecting and analyzing road anomalies such as **potholes, cracks, manholes, and speed bumps** using computer vision and deep learning techniques.
+
+The proposed method integrates **YOLOv8**, a state-of-the-art object detection model, with **MiDaS, a monocular depth estimation model**, to identify and evaluate road defects from live video streams or image inputs.
+
+YOLOv8 accurately localizes anomalies, while MiDaS generates a relative depth map to estimate the distance and depth of each detected object. 
+
+A severity score is then computed using a hybrid formula combining relative area and inverse normalized depth, classifying anomalies into Safe (Low), Warning (Medium), and Danger (High) categories.
+
+The system provides real-time visualization with color-coded bounding boxes and distance measurements (in cm), enhancing interpretability for users and authorities.
 
 
 Output
@@ -25,6 +33,10 @@ ROAD CRACKS
 POTHOLE
 
 <img width="958" height="438" alt="image" src="https://github.com/user-attachments/assets/497630e3-4db0-4ded-a7d0-63b5cf03e4e0" />
+
+<img width="947" height="426" alt="image" src="https://github.com/user-attachments/assets/ad87d848-90a5-46d3-9384-0ae799e4e75c" />
+
+
 
 
 
