@@ -1,23 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Output</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detection Output</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1f4037, #99f2c8);
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+      margin: 0;
+    }
+
+    .output-box {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      color: #FFD700;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+
+    video, img {
+      width: 90%;
+      max-width: 700px;
+      border-radius: 15px;
+      margin-top: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .legend span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.15);
+      padding: 6px 10px;
+      border-radius: 10px;
+    }
+
+    .red { background-color: #ff4d4d; width: 15px; height: 15px; border-radius: 50%; }
+    .yellow { background-color: #ffd633; width: 15px; height: 15px; border-radius: 50%; }
+    .green { background-color: #33cc33; width: 15px; height: 15px; border-radius: 50%; }
+    .blue { background-color: #3399ff; width: 15px; height: 15px; border-radius: 50%; }
+    .gray { background-color: #bfbfbf; width: 15px; height: 15px; border-radius: 50%; }
+
+    a {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 10px 25px;
+      background: linear-gradient(90deg, #FFDEE9, #B5FFFC);
+      color: #000;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      background: linear-gradient(90deg, #8EC5FC, #E0C3FC);
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
-    <h1>Processed Media</h1>
+  <div class="output-box">
+    <h1> Detection Results</h1>
     {% if is_video %}
-        <video width="640" controls>
-            <source src="{{ url_for('static', filename='outputs/' + filename) }}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+      <video controls>
+        <source src="{{ url_for('static', filename='outputs/' + filename) }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     {% else %}
-        <img src="{{ url_for('static', filename='outputs/' + filename) }}" alt="Processed Image" style="max-width: 100%;">
+      <img src="{{ url_for('static', filename='outputs/' + filename) }}" alt="Processed Image">
     {% endif %}
-    <p><a href="{{ url_for('home') }}">Process another file</a></p>
+
+    <div class="legend">
+      <span><div class="red"></div>High Severity</span>
+      <span><div class="yellow"></div>Medium Severity</span>
+      <span><div class="green"></div>Low Severity</span>
+      <span><div class="blue"></div>Speed Bump</span>
+      <span><div class="gray"></div>Manhole</span>
+    </div>
+
+    <a href="{{ url_for('home') }}">🔁 Process Another File</a>
+  </div>
 </body>
 </html>

@@ -1,24 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pothole Detection</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
-        .container { width: 50%; margin: auto; }
-        input[type="text"] { width: 80%; padding: 10px; }
-        button { padding: 10px 20px; cursor: pointer; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pothole Detection</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2b5876, #4e4376);
+      color: #fff;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px 50px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      color: #FFD700;
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    input[type="text"] {
+      width: 80%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #00C9FF, #92FE9D);
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #43e97b, #38f9d7);
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #eee;
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Pothole Detection with YOLOv8 & MiDaS</h1>
-        <p>Enter the path to your image or video file:</p>
-        <form action="/process" method="post">
-            <input type="text" name="file_path" placeholder="e.g., test4.mp4">
-            <button type="submit">Process</button>
-        </form>
-    </div>
+  <div class="container">
+    <h1>Road Damage Detection</h1>
+    <p>Enter your <b>image or video file</b> path to start detection:</p>
+    <form action="/process" method="post">
+      <input type="text" name="file_path" placeholder="e.g., sample_video.mp4" required>
+      <br>
+      <button type="submit"> Process File</button>
+    </form>
+    <footer>Developed by <b>Team 3</b> </footer>
+  </div>
 </body>
 </html>
