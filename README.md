@@ -37,8 +37,8 @@ The system provides real-time visualization with color-coded bounding boxes and 
 
 <img width="947" height="426" alt="image" src="https://github.com/user-attachments/assets/ad87d848-90a5-46d3-9384-0ae799e4e75c" />
 
-**
-To Run this File**
+
+**To Run this File**
 
 1. Download this Project
 2. python app.py
